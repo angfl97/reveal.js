@@ -36,10 +36,20 @@
 				</section>
 						<section >
 							<div style="padding-left: 3em; padding-right: 3em;">
-								<p style="text-align: left;"> HTML: gives the web page strucure </p>
+								<p style="text-align: left;"> HTML: gives the content structure</p>
 								<p class="fragment" style="text-align: left;"> CSS: styles the HTML elements</p>
 								<p class="fragment"style="text-align: left;" > JavaScript: creates dynamic behavior </p>
 						</div>
+						</section>
+						<section>
+							JavaScript is pulled into a page via script tags
+							<pre><code data-trim>
+									<script>
+									...
+									//some JavaScript here
+									...
+									</script>
+							</code></pre>
 						</section>
 				</section>
 				<section>
@@ -50,10 +60,8 @@
 						<h3>
 							Weak Typing
 						</h3>
-						<li>
 							JavaScript variables don't get explicitly typed
-						</li>
-						<pre class="fragment"><code data-trim data-noescape>
+						<pre><code data-trim data-noescape>
 							  var count;
 								 count = 1;
 						</code></pre>
@@ -64,15 +72,29 @@
 						</h3>
 						<div style="padding-left: 2em; padding-right: 2em;">
 							<li style="text-align: left;">
-								Objects have members
+								There are primitives (boolean, string, number, null, and undefined), and all other values are Objects
 							</li>
 							<li style="text-align: left;">
-								Members can be attributes or functions
+								Object members can be attributes or functions
 							</li>
 							<li style="text-align: left;">
-								Objects can be literal or class defined
+								Objects can be defined literally or through a constructor function
 							</li>
 				  	</div>
+					</section>
+					<section>
+						Contructor function example
+						<pre><code data-trim data-noescape>
+						function Person(name) {
+						  this.name = name;
+						  this.greeting = function() {
+						    alert('Hi! I\'m ' + this.name + '.');
+						  };
+						}
+
+						var person1 = new Person('Bob');
+						var person2 = new Person('Jane');
+						</code></pre>
 					</section>
 					<section>
 						<p> 2 ways to access members </p>
@@ -91,13 +113,67 @@
 					</section>
 					<section>
 						<h3> Prototype Objects </h3>
+						<div style="padding-left: 2em; padding-right: 2em;">
+							<li style="text-align: left;">
+								Referred to as a prototype-based language
+							</li>
+							<li style="text-align: left;">
+								No classes in Javascript
+							</li>
+							<li style="text-align: left;">
+								Inheritance is enabled through the prototype object
+							</li>
+							<li style="text-align: left;">
+								When a method is called on an 0bject, its prototype chain is traversed
+							</li>
+						</div>
+					</section>
+					<section>
+						<pre><code data-trim data-noescape>
+							// Set up instance data
+							function Point(x, y) {
+							    this.x = x;
+							    this.y = y;
+							}
+							// Methods
+							Point.prototype.dist = function () {
+							    return Math.sqrt(this.x*this.x + this.y*this.y);
+							};
+							</code></pre>
 					</section>
 				</section>
 				<section>
-					What can JavaScript do?
+					<section>
+						What can JavaScript do?
+					</section>
+					<section>
+						Enables drop down, collapsible, and otherwise animated navigation features <br/>
+						<a href="https://codepen.io/AJamesL/pen/MXmvZp?page=5">A. James Liptak's navigation</a>
+					</section>
+					<section>
+						Dynamic objects can be used to create interactivity <br/>
+						<a href="https://codepen.io/aomyers/pen/LWOwpR"> Sarah B's map</a>
+					</section>
+					<section>
+					  Including games! <br/>
+						<a href="https://codepen.io/TheCodeDepository/pen/jKBaoN?page=8"> Pickle Rick maze</a>
+					</section>
+					<section>
+						And even this slideshow, made with reveal.js
+					</section>
 				</section>
 				<section>
-					Hands off!!
+					<section>
+						Hands off!!
+					</section>
+					<section>
+						As a general rule, if something can be done in either Javascript or CSS, use CSS
+						<p class="fragment"> CSS parses and renders faster</p>
+						<p class="fragment"> it also fails more gracefully, a.k.a. fault tolerant</p>
+					</section>
+				</section>
+				<section>
+					<img src="/images/js.png" alt="yummy web cake" style="border: none; box-shadow: none;"/>
 				</section>
 				<section>
 					JavaScript Activity
